@@ -1,0 +1,39 @@
+.info-box{
+    @include position;
+    width: 540px;
+    background: $blanc-casse;
+    border-radius: 5px;
+    .info-title{
+        @include flex;
+        height: 60px;
+        width: 100%;
+        border-bottom: 2px solid $beige;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .info-list{
+        padding: 15px 35px;
+        .info{
+            margin: 5px 0;
+            font-size: 17px;
+            span{
+                font-weight: 600;
+                color: $vert-casse;
+            }
+        }
+    }
+    .buttons{
+        @include flex;
+        height: 60px;
+        border-top: 2px solid $beige;
+        button{
+            @include button;
+            transition: all 0.4s ease;
+            &:hover{
+                background: $blanc-casse;
+                color: $vert-casse;
+                border: 2px solid $vert-casse;
+            }
+        }
+    }
+}
