@@ -1,0 +1,15 @@
+.start-btn{
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    button{
+        font-size: 25px;
+        font-weight: 500;
+        background: $vert-noir;
+        color: $blanc-casse;
+        padding: 15px 30px;
+        @include button;
+    }
+}

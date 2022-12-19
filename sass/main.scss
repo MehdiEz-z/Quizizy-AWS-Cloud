@@ -1,10 +1,10 @@
 // import variables
-@use "./variables/variables" as *;
+@import "./variables/variables";
 // import mixing
-@use "./mixins/mixins";
+@import "./mixins/mixins";
 // import fonts
-@use "./fonts/fonts";
+@import "./fonts/fonts";
 // import base
-@use "./base/base";
+@import "./base/base";
 // import components
-@use "./components/components" as *;
+@import "./components/components";
