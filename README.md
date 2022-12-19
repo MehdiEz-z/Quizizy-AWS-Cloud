@@ -1,1 +1,0 @@
-# Quizizy-AWS-Cloud
