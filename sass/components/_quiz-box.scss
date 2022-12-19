@@ -1,0 +1,109 @@
+.quiz-box{
+    // display: none;
+    @include position;
+    @include box;
+    header{
+        @include flex;
+        justify-content: space-between;
+        height: 70px;
+        padding: 0 35px;
+        border-bottom: 2px solid $beige;
+        .title{
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .timer{
+            @include flex;
+            justify-content: space-between;
+            width: 145px;
+            height: 45px;
+            background: $beige;
+            border-radius: 5px;
+            padding: 0 8px;
+            .time-text{
+                font-weight: 500;
+                font-size: 17px;
+                user-select: none;
+            }
+            .time-second{
+                font-size: 18px;
+                font-weight: 500;
+                background: $vert-casse;
+                height: 30px;
+                width: 45px;
+                color: $blanc-casse;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 30px;
+                user-select: none;
+            }
+        }
+    }
+    section{
+        padding: 15px 35px;
+        .question-text{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .option-list{
+            padding: 20px 0;
+            display: block;
+            .option{
+                @include flex;
+                justify-content: space-between;
+                background: $vert-light;
+                border: 2px solid $vert-casse;
+                border-radius: 5px;
+                padding: 8px 15px;
+                margin-bottom: 15px;
+                font-size: 17px;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                &:hover{
+                    color: $vert-noir;
+                    background: $blanc;
+                }
+                .icon-true{
+                    color: $vert;
+                }
+                .icon-false{
+                    color: $rouge;
+                }
+            }
+            :last-child{
+                margin-bottom: 0px;
+            }
+        }
+    }
+    footer{
+        @include flex;
+        justify-content: space-between;
+        height: 70px;
+        width: 100%;
+        padding: 0 35px;
+        border-top: 2px solid $beige;
+        .total-question{
+            span{
+                @include flex;
+                user-select: none;
+                p{
+                    font-weight: 600;
+                    padding: 0 5px;
+                }
+                :first-child{
+                    padding-left: 0px;
+                }
+            }
+                
+        }
+        .next-btn{
+            @include button;
+            transition: all 0.4s ease;
+            &:hover{
+                background: $blanc-casse;
+                color: $vert-casse;
+                border: 2px solid $vert-casse;
+            }
+        }
+    }
+}

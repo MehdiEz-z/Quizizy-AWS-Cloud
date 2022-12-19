@@ -26,5 +26,11 @@
 @mixin flex {
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+@mixin box {
+    width: 550px;
+    background: $blanc-casse;
+    border-radius: 5px;
+    font-family: $poppins, $sans-serif;
 }

@@ -8,7 +8,6 @@
 
 body {
   background-color: #E4DCCF;
-  font-family: "Poppins", sans-serif;
 }
 
 .start-btn {
@@ -23,25 +22,29 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 400;
   background: #576F72;
   color: #F0EBE3;
   padding: 20px 30px;
+  font-family: "Poppins", sans-serif;
 }
 
 .info-box {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 540px;
+  width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
+  font-family: "Poppins", sans-serif;
 }
 .info-box .info-title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0 35px;
   height: 60px;
   width: 100%;
   border-bottom: 2px solid #E4DCCF;
@@ -62,7 +65,8 @@ body {
 .info-box .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0 35px;
   height: 60px;
   border-top: 2px solid #E4DCCF;
 }
@@ -81,6 +85,142 @@ body {
   transition: all 0.4s ease;
 }
 .info-box .buttons button:hover {
+  background: #F0EBE3;
+  color: #7D9D9C;
+  border: 2px solid #7D9D9C;
+}
+
+.quiz-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  background: #F0EBE3;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+.quiz-box header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 35px;
+  border-bottom: 2px solid #E4DCCF;
+}
+.quiz-box header .title {
+  font-size: 25px;
+  font-weight: 600;
+}
+.quiz-box header .timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 145px;
+  height: 45px;
+  background: #E4DCCF;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+.quiz-box header .timer .time-text {
+  font-weight: 500;
+  font-size: 17px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.quiz-box header .timer .time-second {
+  font-size: 18px;
+  font-weight: 500;
+  background: #7D9D9C;
+  height: 30px;
+  width: 45px;
+  color: #F0EBE3;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.quiz-box section {
+  padding: 15px 35px;
+}
+.quiz-box section .question-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+.quiz-box section .option-list {
+  padding: 20px 0;
+  display: block;
+}
+.quiz-box section .option-list .option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e2f3f3;
+  border: 2px solid #7D9D9C;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.quiz-box section .option-list .option:hover {
+  color: #576F72;
+  background: #fff;
+}
+.quiz-box section .option-list .option .icon-true {
+  color: #09ac09;
+}
+.quiz-box section .option-list .option .icon-false {
+  color: #df3445;
+}
+.quiz-box section .option-list :last-child {
+  margin-bottom: 0px;
+}
+.quiz-box footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  padding: 0 35px;
+  border-top: 2px solid #E4DCCF;
+}
+.quiz-box footer .total-question span {
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.quiz-box footer .total-question span p {
+  font-weight: 600;
+  padding: 0 5px;
+}
+.quiz-box footer .total-question span :first-child {
+  padding-left: 0px;
+}
+.quiz-box footer .next-btn {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  height: 40px;
+  width: 100px;
+  background: #7D9D9C;
+  color: #F0EBE3;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+.quiz-box footer .next-btn:hover {
   background: #F0EBE3;
   color: #7D9D9C;
   border: 2px solid #7D9D9C;
