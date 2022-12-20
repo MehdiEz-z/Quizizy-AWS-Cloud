@@ -10,13 +10,13 @@ body {
   background-color: #E4DCCF;
 }
 
-.start-btn {
+.enter-btn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.start-btn button {
+.enter-btn button {
   outline: none;
   border: none;
   border-radius: 5px;
@@ -30,7 +30,7 @@ body {
   padding: 15px 30px;
   font-family: "Poppins", sans-serif;
 }
-.start-btn button .logo {
+.enter-btn button .logo {
   width: 40px;
   margin-right: 2px;
 }
@@ -47,6 +47,12 @@ body {
   background: #F0EBE3;
   border-radius: 5px;
   font-family: "Poppins", sans-serif;
+}
+.info-box.active-info {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 .info-box .info-title {
   display: flex;
@@ -110,6 +116,12 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
+}
+.quiz-box.active-quiz {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 .quiz-box header {
   display: flex;

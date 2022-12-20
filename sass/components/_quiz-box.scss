@@ -2,6 +2,9 @@
     @include position;
     @include box;
     @include display-none;
+    &.active-quiz{
+        @include display-block;
+    }
     header{
         @include flex;
         justify-content: space-between;

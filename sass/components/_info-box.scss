@@ -2,6 +2,9 @@
     @include display-none;
     @include position;
     @include box;
+    &.active-info{
+        @include display-block;
+    }
     .info-title{
         @include flex;
         justify-content: flex-start;
