@@ -1,5 +1,5 @@
 .info-box{
-    display: none;
+    @include display-none;
     @include position;
     @include box;
     .info-title{

@@ -1,7 +1,7 @@
 .quiz-box{
-    // display: none;
     @include position;
     @include box;
+    @include display-none;
     header{
         @include flex;
         justify-content: space-between;
@@ -9,16 +9,22 @@
         padding: 0 35px;
         border-bottom: 2px solid $beige;
         .title{
+            @include flex;
             font-size: 25px;
             font-weight: 600;
+            color: $vert-noir;
+            .logo{
+                width: 30px;
+                margin-right: 2px
+            }
         }
         .timer{
             @include flex;
             justify-content: space-between;
-            width: 145px;
-            height: 45px;
-            background: $beige;
             border-radius: 5px;
+            width: 145px;
+            height: 45px;           
+            background: $beige;           
             padding: 0 8px;
             .time-text{
                 font-weight: 500;
@@ -51,7 +57,7 @@
             .option{
                 @include flex;
                 justify-content: space-between;
-                background: $vert-light;
+                background: $blanc;
                 border: 2px solid $vert-casse;
                 border-radius: 5px;
                 padding: 8px 15px;
@@ -61,7 +67,6 @@
                 transition: all 0.4s ease;
                 &:hover{
                     color: $vert-noir;
-                    background: $blanc;
                 }
                 .icon-true{
                     color: $vert;

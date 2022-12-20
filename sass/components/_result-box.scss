@@ -1,0 +1,40 @@
+.result-box{
+    @include position;
+    @include box;
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 25px 30px;
+    @include display-none;
+    .crown{
+        width: 250px;
+    }
+    .complete-text{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    span{
+        @include flex;
+        margin: 10px 0;
+        font-size: 17px;
+        font-weight: 500;
+        p{
+            font-weight: 600;
+            padding: 0 4px;
+        }
+        :last-child{
+            padding-right: 0px;
+        }
+    }
+    button{
+        @include button;
+        margin-top: 10px;
+        transition: all 0.4s ease;
+        &:hover{
+            background: $blanc-casse;
+            color: $vert-casse;
+            border: 2px solid $vert-casse;
+        }
+    }
+}
