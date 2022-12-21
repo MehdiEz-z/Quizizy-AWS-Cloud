@@ -34,7 +34,6 @@
         border-top: 2px solid $beige;
         button{
             @include button;
-            transition: all 0.4s ease;
             &:hover{
                 background: $blanc-casse;
                 color: $vert-casse;

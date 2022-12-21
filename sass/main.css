@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+:root {
+  --bar-stepper: 0%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -8,11 +12,12 @@
 
 body {
   background-color: #E4DCCF;
+  font-family: "Poppins", sans-serif;
 }
 
 .enter-btn {
   position: absolute;
-  top: 50%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -35,18 +40,83 @@ body {
   margin-right: 2px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+.container.active-stepper {
+  opacity: 1;
+}
+.container .stepper-bar {
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+  width: 600px;
+  justify-content: space-between;
+}
+.container .stepper-bar::before {
+  z-index: -10;
+  position: absolute;
+  content: "";
+  top: 56px;
+  height: 8px;
+  width: 95%;
+  background: #F0EBE3;
+}
+.container .stepper-bar::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  top: 56px;
+  height: 8px;
+  width: var(--bar-stepper);
+  background: #576F72;
+  transition: all ease 1s;
+}
+.container .stepper-bar .step {
+  text-align: center;
+}
+.container .stepper-bar .step p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #576F72;
+}
+.container .stepper-bar .step .bullet {
+  height: 50px;
+  width: 50px;
+  border: 2px solid #576F72;
+  border-radius: 50%;
+  background: #F0EBE3;
+}
+.container .stepper-bar .step .bullet span {
+  font-weight: 600;
+  font-weight: 17px;
+  line-height: 48px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #576F72;
+}
+.container .stepper-bar .step .bullet.coloring-bullet {
+  background: #576F72;
+  transition: all ease 2s;
+}
+.container .stepper-bar .step .bullet.coloring-bullet span {
+  color: #F0EBE3;
+}
+
 .info-box {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
   position: absolute;
-  top: 50%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
-  font-family: "Poppins", sans-serif;
 }
 .info-box.active-info {
   z-index: 5;
@@ -96,7 +166,7 @@ body {
   color: #F0EBE3;
   font-size: 16px;
   font-weight: 500;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease-out;
 }
 .info-box .buttons button:hover {
   background: #F0EBE3;
@@ -106,13 +176,12 @@ body {
 
 .quiz-box {
   position: absolute;
-  top: 50%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
-  font-family: "Poppins", sans-serif;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
@@ -238,7 +307,7 @@ body {
   color: #F0EBE3;
   font-size: 16px;
   font-weight: 500;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease-out;
 }
 .quiz-box footer .next-btn:hover {
   background: #F0EBE3;
@@ -248,13 +317,12 @@ body {
 
 .result-box {
   position: absolute;
-  top: 50%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
-  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -298,6 +366,7 @@ body {
   color: #F0EBE3;
   font-size: 16px;
   font-weight: 500;
+  transition: all 0.5s ease-out;
   margin-top: 10px;
   transition: all 0.4s ease;
 }

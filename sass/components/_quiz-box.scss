@@ -106,7 +106,6 @@
         }
         .next-btn{
             @include button;
-            transition: all 0.4s ease;
             &:hover{
                 background: $blanc-casse;
                 color: $vert-casse;

@@ -14,11 +14,12 @@
     color: $blanc-casse;
     font-size: 16px;
     font-weight: 500;
+    transition: all 0.5s ease-out;
 }
 
 @mixin position {
     position: absolute;
-    top : 50%;
+    top : 56%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -32,7 +33,7 @@
     width: 550px;
     background: $blanc-casse;
     border-radius: 5px;
-    font-family: $poppins, $sans-serif;
+
 }
 
 @mixin display-none {
