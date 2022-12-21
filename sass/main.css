@@ -20,6 +20,7 @@ body {
   top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
+  user-select: none;
 }
 .enter-btn button {
   outline: none;
@@ -44,6 +45,7 @@ body {
   display: flex;
   justify-content: center;
   opacity: 0;
+  user-select: none;
 }
 .container.active-stepper {
   opacity: 1;
@@ -117,6 +119,7 @@ body {
   width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
+  user-select: none;
 }
 .info-box.active-info {
   z-index: 5;
@@ -182,6 +185,7 @@ body {
   width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
+  user-select: none;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
@@ -323,6 +327,7 @@ body {
   width: 550px;
   background: #F0EBE3;
   border-radius: 5px;
+  user-select: none;
   display: flex;
   align-items: center;
   flex-direction: column;

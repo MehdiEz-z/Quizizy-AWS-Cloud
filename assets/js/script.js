@@ -79,6 +79,7 @@ quit_btn.onclick = ()=>{
 // ------------------------------------------------------------------------------//
 
 
+//Geting Questions and Responses From Array
 function showQuestions(){
     const question_text =document.querySelector(".question-text");
     let question_tag = `<span>${questions[0].question}</span>`

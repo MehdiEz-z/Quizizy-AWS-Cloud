@@ -1,7 +1,8 @@
 .container{
     display: flex;
     justify-content: center;
-    opacity: 0;
+    opacity: 0; 
+    user-select: none;
     &.active-stepper{
         opacity:1;
     }

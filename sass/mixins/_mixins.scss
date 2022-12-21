@@ -33,7 +33,7 @@
     width: 550px;
     background: $blanc-casse;
     border-radius: 5px;
-
+    user-select: none;
 }
 
 @mixin display-none {

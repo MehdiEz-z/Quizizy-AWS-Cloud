@@ -1,5 +1,6 @@
 .enter-btn{
     @include position;
+    user-select: none;
     button{
         @include style-button;
         @include flex;
