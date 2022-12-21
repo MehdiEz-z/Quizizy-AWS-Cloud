@@ -23,6 +23,9 @@ const quit_btn = result_box.querySelector(".buttons .quit");
 const replay_btn = result_box.querySelector(".buttons .restart");
 
 
+// ------------------------------------------------------------------------------//
+
+
 // Button Quizizy clicked
 enter_btn.onclick = ()=>{
     info_box.classList.add("active-info"); //Show info box
@@ -43,6 +46,7 @@ start_btn.onclick = ()=>{
     info_box.classList.remove("active-info"); //Hide info box
     quiz_box.classList.add("active-quiz"); //Show quiz box
     bullet_two.classList.add("coloring-bullet"); //Coloring second bullet
+    showQuestions();
 }
 
 // Button Next Question clicked
@@ -71,3 +75,12 @@ quit_btn.onclick = ()=>{
     bullet_tree.classList.remove("coloring-bullet"); //Decooloring third bullet
 }
 
+
+// ------------------------------------------------------------------------------//
+
+
+function showQuestions(){
+    const question_text =document.querySelector(".question-text");
+    let question_tag = `<span>${questions[0].question}</span>`
+    question_text.innerHTML = question_tag;
+}
