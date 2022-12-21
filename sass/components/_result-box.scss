@@ -7,6 +7,9 @@
     text-align: center;
     padding: 0 25px 30px;
     @include display-none;
+    &.active-result{
+        @include display-block;
+    }
     .crown{
         width: 250px;
     }

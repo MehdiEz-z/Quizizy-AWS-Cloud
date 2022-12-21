@@ -333,6 +333,12 @@ body {
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
 }
+.result-box.active-result {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
 .result-box .crown {
   width: 250px;
 }
