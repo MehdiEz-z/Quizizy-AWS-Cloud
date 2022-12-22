@@ -1,7 +1,7 @@
 //create the quiz questions
 let questions = [
     {
-        numero: 1,
+        suite: 'A',
         question: "Why is AWS more economical than traditional data centers for applications with varying compute workloads ?",
         reponse : "Amazon EC2 instances can be launched on demand when needed",
         options: [
@@ -13,7 +13,7 @@ let questions = [
     },
 
     {
-        numero: 2,
+        suite: 'B',
         question: "Which AWS service would simplify the migration of a database to AWS?",
         reponse : "AWS Database Migration Service (AWS DMS)",
         options: [
@@ -25,7 +25,7 @@ let questions = [
     },
 
     {
-        numero: 3,
+        suite: 'C',
         question: "Which AWS offering enables users to find, buy, and immediately start using software solutions in their AWS environment?",
         reponse : "AWS Marketplace",
         options: [
@@ -37,7 +37,7 @@ let questions = [
     },
 
     {
-        numero: 4,
+        suite: 'D',
         question: "Which AWS offering enables users to find, buy, and immediately start using software solutions in their AWS environment?",
         reponse : "Amazon Virtual Private Cloud (Amazon VPC)",
         options: [
@@ -49,7 +49,7 @@ let questions = [
     },
 
     {
-        numero: 5,
+        suite: 'E',
         question: "Which of the following is an AWS responsibility under the AWS shared responsibility model ?",
         reponse : "Maintaining physical hardware",
         options: [
@@ -61,7 +61,7 @@ let questions = [
     },
 
     {
-        numero: 6,
+        suite: 'F',
         question: "Which component of the AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery ?",
         reponse : "Edge locations",
         options: [
@@ -73,7 +73,7 @@ let questions = [
     },
 
     {
-        numero: 7,
+        suite: 'G',
         question: "How would a system administrator add an additional layer of login security to a user's AWS Management Console ?",
         reponse : "Enable multi-factor authentication",
         options: [
@@ -85,7 +85,7 @@ let questions = [
     },
 
     {
-        numero: 8,
+        suite: 'H',
         question: "Which service can identify the user that made the API call when an Amazon EC2 instance is terminated ?",
         reponse : "AWS CloudTrail",
         options: [
@@ -97,7 +97,7 @@ let questions = [
     },
 
     {
-        numero: 9,
+        suite: 'I',
         question: "Which AWS offering enables users to find, buy, and immediately start using software solutions in their AWS environment ?",
         reponse : "Amazon Simple Notification Service (Amazon SNS)",
         options: [
@@ -109,7 +109,7 @@ let questions = [
     },
 
     {
-        numero: 10,
+        suite: 'J',
         question: "Where can a user find information about prohibited actions on the AWS infrastructure ?",
         reponse : "AWS Acceptable Use Policy",
         options: [

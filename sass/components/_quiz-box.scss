@@ -58,8 +58,8 @@
             padding: 20px 0;
             display: block;
             .option{
-                @include flex;
-                justify-content: space-between;
+                // @include flex;
+                // justify-content: space-between;
                 background: $blanc;
                 border: 2px solid $vert-casse;
                 border-radius: 5px;
@@ -71,12 +71,12 @@
                 &:hover{
                     color: $vert-noir;
                 }
-                .icon-true{
-                    color: $vert;
-                }
-                .icon-false{
-                    color: $rouge;
-                }
+                // .icon-true{
+                //     color: $vert;
+                // }
+                // .icon-false{
+                //     color: $rouge;
+                // }
             }
             :last-child{
                 margin-bottom: 0px;

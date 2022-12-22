@@ -46,16 +46,16 @@ start_btn.onclick = ()=>{
     info_box.classList.remove("active-info"); //Hide info box
     quiz_box.classList.add("active-quiz"); //Show quiz box
     bullet_two.classList.add("coloring-bullet"); //Coloring second bullet
-    showQuestions();
+    showQuestions(0);
 }
 
 // Button Next Question clicked
-next_btn.onclick = ()=>{
-    bar_stepper.style.setProperty('--bar-stepper', '95%') //Progress stepper to third step
-    result_box.classList.add("active-result") //Show result
-    quiz_box.classList.remove("active-quiz"); //Hide quiz box
-    bullet_tree.classList.add("coloring-bullet"); //Coloring third bullet
-}
+// next_btn.onclick = ()=>{
+//     bar_stepper.style.setProperty('--bar-stepper', '95%') //Progress stepper to third step
+//     result_box.classList.add("active-result") //Show result
+//     quiz_box.classList.remove("active-quiz"); //Hide quiz box
+//     bullet_tree.classList.add("coloring-bullet"); //Coloring third bullet
+// }
 
 // Button Replay Quiz clicked
 replay_btn.onclick = ()=>{
@@ -75,13 +75,32 @@ quit_btn.onclick = ()=>{
     bullet_tree.classList.remove("coloring-bullet"); //Decooloring third bullet
 }
 
+// Button Next Question clicked
+let question_counter = 0;
+
+next_btn.onclick = ()=>{
+    if(question_counter < questions.length - 1){
+        question_counter ++;
+        showQuestions(question_counter);
+    }
+}
+
 
 // ------------------------------------------------------------------------------//
 
 
 //Geting Questions and Responses From Array
-function showQuestions(){
-    const question_text =document.querySelector(".question-text");
-    let question_tag = `<span>${questions[0].question}</span>`
+function showQuestions(index){
+    //Get Question
+    const question_text = document.querySelector(".question-text");
+    let question_tag = `<span>${questions[index].suite +".  "+ questions[index].question}</span>`
     question_text.innerHTML = question_tag;
+
+    //Get Response
+    const option_list = document.querySelector(".option-list");
+    let option_tag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+                        <div class="option"><span>${questions[index].options[1]}</span></div>
+                        <div class="option"><span>${questions[index].options[2]}</span></div>
+                        <div class="option"><span>${questions[index].options[3]}</span></div> `
+    option_list.innerHTML = option_tag;
 }
