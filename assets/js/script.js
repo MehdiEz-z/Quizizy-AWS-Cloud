@@ -22,6 +22,9 @@ const result_box = document.querySelector(".result-box");
 const quit_btn = result_box.querySelector(".buttons .quit");
 const replay_btn = result_box.querySelector(".buttons .restart");
 
+// Counter Of Questions
+let question_counter = 0;
+
 
 // ------------------------------------------------------------------------------//
 
@@ -49,20 +52,14 @@ start_btn.onclick = ()=>{
     showQuestions(0);
 }
 
-// Button Next Question clicked
-// next_btn.onclick = ()=>{
-//     bar_stepper.style.setProperty('--bar-stepper', '95%') //Progress stepper to third step
-//     result_box.classList.add("active-result") //Show result
-//     quiz_box.classList.remove("active-quiz"); //Hide quiz box
-//     bullet_tree.classList.add("coloring-bullet"); //Coloring third bullet
-// }
-
 // Button Replay Quiz clicked
 replay_btn.onclick = ()=>{
     result_box.classList.remove("active-result"); //Hide stepper
     bar_stepper.style.setProperty('--bar-stepper', '50%') //Restart Progress stepper to first step
     quiz_box.classList.add("active-quiz"); //Show quiz box
     bullet_tree.classList.remove("coloring-bullet"); //Decooloring third bullet
+    question_counter = 0
+    showQuestions(question_counter);
 }
 
 // Button Quit Quiz clicked
@@ -73,15 +70,17 @@ quit_btn.onclick = ()=>{
     bullet_one.classList.remove("coloring-bullet"); //Decoloring first bullet
     bullet_two.classList.remove("coloring-bullet"); //Decoloring second bullet
     bullet_tree.classList.remove("coloring-bullet"); //Decooloring third bullet
+    question_counter = 0;
+    showQuestions(question_counter);
 }
 
-// Button Next Question clicked
-let question_counter = 0;
 
 next_btn.onclick = ()=>{
     if(question_counter < questions.length - 1){
         question_counter ++;
         showQuestions(question_counter);
+    }else{
+        showResult();
     }
 }
 
@@ -103,4 +102,12 @@ function showQuestions(index){
                         <div class="option"><span>${questions[index].options[2]}</span></div>
                         <div class="option"><span>${questions[index].options[3]}</span></div> `
     option_list.innerHTML = option_tag;
+}
+
+//Show Result Box
+function showResult(){
+    bar_stepper.style.setProperty('--bar-stepper', '95%') //Progress stepper to third step
+    quiz_box.classList.remove("active-quiz"); //Hide quiz box
+    result_box.classList.add("active-result") //Show result
+    bullet_tree.classList.add("coloring-bullet"); //Coloring third bullet
 }
