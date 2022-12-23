@@ -69,6 +69,7 @@ next_btn.onclick        = ()=>{
         showQuestions(question_counter)
         questionCounter(question_number)
         bar_progress.style.setProperty('--bar-progress', `${progress_conter}%`) //Incrementation Progress bar
+        next_btn.style.display  = "none"
     }else{
         showResult();
     }
@@ -86,6 +87,7 @@ replay_btn.onclick      = ()=>{
     bullet_tree.classList.remove("coloring-bullet"); //Decooloring third bullet
     showQuestions(question_counter);
     questionCounter(question_number);
+    next_btn.style.display  = "none"
 }
 
 // Button Quit Quiz clicked
@@ -102,6 +104,7 @@ quit_btn.onclick        = ()=>{
     bullet_tree.classList.remove("coloring-bullet") //Decooloring third bullet
     showQuestions(question_counter)
     questionCounter(question_number)
+    next_btn.style.display  = "none"
 }
 
 
@@ -121,10 +124,32 @@ function showQuestions(index){
                                 <div class="option"><span>${questions[index].options[3]}</span></div> `
     option_list.innerHTML   = option_tag
 
-
+    //Set Attribute "onclick" to Options
+    const option            = option_list.querySelectorAll(".option");
+    for(let i = 0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
 }
 
-//Swow Counter Question
+//Option Selected
+function optionSelected(reponse){
+    let user_reponse        = reponse.textContent
+    let correct_reponse     = questions[question_counter].reponse
+    let allOptions          = option_list.children.length
+    if (user_reponse == correct_reponse) {
+        reponse.classList.add("correct")
+    }else{
+        reponse.classList.add("incorrect")
+    }
+
+    // Once User Select Disable All option
+    for(let i = 0; i < allOptions; i++){
+        option_list.children[i].classList.add("disabled")
+    }
+    next_btn.style.display  = "block"
+}
+
+//Show Counter Question
 function questionCounter(index){
     let questionCounter_tag = `<span><p>${index}</p>of<p>${questions.length}</p></span>`
     total_question.innerHTML= questionCounter_tag

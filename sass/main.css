@@ -265,6 +265,16 @@ body {
   cursor: pointer;
   transition: all 0.4s ease;
 }
+.quiz-box section .option-list .option.correct {
+  color: #0d990d;
+  background-color: #d4edda;
+  border-color: #0d990d;
+}
+.quiz-box section .option-list .option.incorrect {
+  color: #a42834;
+  background-color: #f8d7da;
+  border-color: #a42834;
+}
 .quiz-box section .option-list .option.disabled {
   pointer-events: none;
 }
@@ -331,6 +341,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   transition: all 0.5s ease-out;
+  display: none;
 }
 .quiz-box footer .next-btn:hover {
   background: #F0EBE3;
