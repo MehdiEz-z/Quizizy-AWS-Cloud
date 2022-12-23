@@ -11,6 +11,16 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #E4DCCF;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #576F72;
+}
+
 body {
   background-color: #E4DCCF;
   font-family: "Poppins", sans-serif;
@@ -381,16 +391,41 @@ body {
   font-size: 25px;
   font-weight: 600;
 }
-.result-box span {
+.result-box .score-text span {
   display: flex;
   align-items: center;
   margin: 10px 0;
   font-size: 17px;
   font-weight: 500;
 }
-.result-box span p {
+.result-box .score-text span p {
   font-weight: 600;
   padding: 0 4px;
+}
+.result-box .explication {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  width: 450px;
+  height: 350px;
+  background-color: #E4DCCF;
+  border-radius: 5px;
+  overflow-y: auto;
+  text-align: start;
+}
+.result-box .explication .correction {
+  padding: 10px;
+  margin-right: 0;
+  width: 400px;
+  height: auto;
+  background-color: #F0EBE3;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+.result-box .explication .correction .incorect-question {
+  font-size: 15px;
+  font-weight: 500;
 }
 .result-box button {
   outline: none;
