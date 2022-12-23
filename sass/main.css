@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 :root {
   --bar-stepper: 0%;
+  --bar-progress: 0%;
 }
 
 * {
@@ -220,26 +221,27 @@ body {
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
-  width: 145px;
+  width: 90px;
   height: 45px;
   background: #E4DCCF;
   padding: 0 8px;
 }
-.quiz-box header .timer .time-text {
-  font-weight: 500;
-  font-size: 17px;
+.quiz-box header .timer .time-icon {
+  font-size: x-large;
+  color: #576F72;
   user-select: none;
 }
 .quiz-box header .timer .time-second {
   font-size: 18px;
   font-weight: 500;
-  background: #7D9D9C;
+  background: #F0EBE3;
   height: 30px;
   width: 45px;
-  color: #F0EBE3;
+  color: #576F72;
+  border: 2px solid #576F72;
   border-radius: 5px;
   text-align: center;
-  line-height: 30px;
+  line-height: 28px;
   user-select: none;
 }
 .quiz-box section {
@@ -254,9 +256,6 @@ body {
   display: block;
 }
 .quiz-box section .option-list .option {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: #fff;
   border: 2px solid #7D9D9C;
   border-radius: 5px;
@@ -266,14 +265,11 @@ body {
   cursor: pointer;
   transition: all 0.4s ease;
 }
+.quiz-box section .option-list .option.disabled {
+  pointer-events: none;
+}
 .quiz-box section .option-list .option:hover {
   color: #576F72;
-}
-.quiz-box section .option-list .option .icon-true {
-  color: #09ac09;
-}
-.quiz-box section .option-list .option .icon-false {
-  color: #df3445;
 }
 .quiz-box section .option-list :last-child {
   margin-bottom: 0px;
@@ -290,6 +286,8 @@ body {
 .quiz-box footer .total-question span {
   display: flex;
   align-items: center;
+  position: relative;
+  width: 250px;
   user-select: none;
 }
 .quiz-box footer .total-question span p {
@@ -298,6 +296,27 @@ body {
 }
 .quiz-box footer .total-question span :first-child {
   padding-left: 0px;
+}
+.quiz-box footer .total-question span::before {
+  z-index: -10;
+  position: absolute;
+  content: "";
+  left: 60px;
+  height: 12px;
+  width: 100%;
+  background: #E4DCCF;
+  border-radius: 10px;
+}
+.quiz-box footer .total-question span::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  left: 60px;
+  height: 12px;
+  width: var(--bar-progress);
+  background: #576F72;
+  transition: all ease 1s;
+  border-radius: 10px;
 }
 .quiz-box footer .next-btn {
   outline: none;

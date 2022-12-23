@@ -25,25 +25,26 @@
             @include flex;
             justify-content: space-between;
             border-radius: 5px;
-            width: 145px;
+            width: 90px;
             height: 45px;           
             background: $beige;           
             padding: 0 8px;
-            .time-text{
-                font-weight: 500;
-                font-size: 17px;
+            .time-icon{
+                font-size: x-large;
+                color: $vert-noir;
                 user-select: none;
             }
             .time-second{
                 font-size: 18px;
                 font-weight: 500;
-                background: $vert-casse;
+                background: $blanc-casse;
                 height: 30px;
                 width: 45px;
-                color: $blanc-casse;
+                color: $vert-noir;
+                border: 2px solid $vert-noir;
                 border-radius: 5px;
                 text-align: center;
-                line-height: 30px;
+                line-height: 28px;
                 user-select: none;
             }
         }
@@ -68,15 +69,12 @@
                 font-size: 17px;
                 cursor: pointer;
                 transition: all 0.4s ease;
+                &.disabled{
+                    pointer-events: none;
+                }
                 &:hover{
                     color: $vert-noir;
                 }
-                // .icon-true{
-                //     color: $vert;
-                // }
-                // .icon-false{
-                //     color: $rouge;
-                // }
             }
             :last-child{
                 margin-bottom: 0px;
@@ -93,6 +91,8 @@
         .total-question{
             span{
                 @include flex;
+                position: relative;
+                width: 250px;
                 user-select: none;
                 p{
                     font-weight: 600;
@@ -100,6 +100,27 @@
                 }
                 :first-child{
                     padding-left: 0px;
+                }
+                &::before{
+                    z-index: -10;
+                    position: absolute;
+                    content: '';
+                    left: 60px;
+                    height: 12px;
+                    width: 100%;
+                    background: $beige;
+                    border-radius: 10px;
+                }
+                &::after{
+                    z-index: -1;
+                    position: absolute;
+                    content: '';
+                    left: 60px;
+                    height: 12px;
+                    width: var(--bar-progress);
+                    background: $vert-noir;
+                    transition: all ease 1s;
+                    border-radius: 10px
                 }
             }
                 
