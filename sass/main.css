@@ -63,7 +63,7 @@ body {
   position: absolute;
   content: "";
   top: 56px;
-  height: 8px;
+  height: 10px;
   width: 95%;
   background: #F0EBE3;
 }
@@ -72,7 +72,7 @@ body {
   position: absolute;
   content: "";
   top: 56px;
-  height: 8px;
+  height: 10px;
   width: var(--bar-stepper);
   background: #576F72;
   transition: all ease 1s;
@@ -363,7 +363,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  padding: 0 25px 30px;
+  padding: 0 25px 20px;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0.9);
@@ -374,8 +374,8 @@ body {
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
 }
-.result-box .crown {
-  width: 250px;
+.result-box .logo {
+  width: 150px;
 }
 .result-box .complete-text {
   font-size: 25px;
@@ -392,9 +392,6 @@ body {
   font-weight: 600;
   padding: 0 4px;
 }
-.result-box span :last-child {
-  padding-right: 0px;
-}
 .result-box button {
   outline: none;
   border: none;
@@ -408,7 +405,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   transition: all 0.5s ease-out;
-  margin-top: 10px;
+  margin-top: 15px;
   transition: all 0.4s ease;
 }
 .result-box button:hover {

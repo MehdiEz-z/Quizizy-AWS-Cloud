@@ -29,7 +29,8 @@ const replay_btn    = result_box.querySelector(".buttons .restart");
 // Counters
 let question_counter    = 0; //Question counter
 let question_number     = 1; //Question number  
-let progress_conter     = 10; //Progress Bar conter
+let progress_conter     = 10; //Progress Bar counter
+let score_counter       = 0; //User Score counter
 
 
 // ------------------------ Buttons ------------------------ //
@@ -80,6 +81,8 @@ replay_btn.onclick      = ()=>{
     question_counter    = 0
     question_number     = 1
     progress_conter     = 10
+    score_counter       = 0
+    incorect_array      = [];
     result_box.classList.remove("active-result"); //Hide stepper
     bar_stepper.style.setProperty('--bar-stepper', '50%') //Restart Progress stepper to first step
     bar_progress.style.setProperty('--bar-progress', `${progress_conter}%`) //Restart Progress bar
@@ -95,6 +98,8 @@ quit_btn.onclick        = ()=>{
     question_counter    = 0
     question_number     = 1
     progress_conter     = 10
+    score_counter       = 0
+    incorect_array      = [];
     result_box.classList.remove("active-result") //Hide stepper
     stepper.classList.remove("active-stepper") //Hide stepper
     bar_stepper.style.setProperty('--bar-stepper', '0%') //Restart Progress stepper to first step
@@ -131,6 +136,9 @@ function showQuestions(index){
     }
 }
 
+//Array Stock incorrect Response
+let incorect_array    = [];
+
 //Option Selected
 function optionSelected(reponse){
     let user_reponse        = reponse.textContent
@@ -138,8 +146,11 @@ function optionSelected(reponse){
     let allOptions          = option_list.children.length
     if (user_reponse == correct_reponse) {
         reponse.classList.add("correct")
+        score_counter += 100
     }else{
         reponse.classList.add("incorrect")
+        incorect_array.push(reponse.textContent);
+        console.log(incorect_array)
     }
 
     // Once User Select Disable All option
@@ -161,4 +172,17 @@ function showResult(){
     quiz_box.classList.remove("active-quiz") //Hide quiz box
     result_box.classList.add("active-result") //Show result
     bullet_tree.classList.add("coloring-bullet") //Coloring third bullet
+
+    //Condition Result score
+    const score_text    = result_box.querySelector(".score-text");
+    if(score_counter == 1000){
+        let score_tag       = `<span>and Congrats! You got <p>${score_counter}</p> Points</span>`
+        score_text.innerHTML= score_tag
+    }else if(score_counter < 1000 && score_counter >= 500){
+        let score_tag       = `<span>and Nice! You got <p>${score_counter}</p> Points</span>`
+        score_text.innerHTML= score_tag
+    }else if(score_counter < 500){
+        let score_tag       = `<span>and Sorry! You got only <p>${score_counter}</p> Points</span>`
+        score_text.innerHTML= score_tag
+    }
 }
