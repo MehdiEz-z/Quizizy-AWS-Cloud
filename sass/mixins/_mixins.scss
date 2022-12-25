@@ -48,3 +48,25 @@
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
 }
+
+@mixin reponse($border){
+    background: $blanc-casse;
+    border: 2px solid $border;
+    border-radius: 5px;
+    padding: 4px 6px;
+    font-size: 13px;
+}
+
+@mixin answer($color, $border){
+    text-align: center;
+    font-size: 12px;
+    color: $color;
+    border: 2px solid $border;
+    border-bottom: none;
+    background-color: $blanc-casse;
+    width: 120px;
+    margin-left: 10px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    padding: 0 4px;
+}

@@ -31,8 +31,7 @@
     .explication{
         @include flex;
         flex-direction: column;
-        padding: 10px;
-        width: 450px;
+        padding: 15px;
         height: 350px;
         background-color: $beige;
         border-radius: 5px;
@@ -52,20 +51,18 @@
                 font-weight: 500;
                 margin-bottom: 10px;
             }
+            .your-answer{
+                @include answer($rouge, $rouge);
+            }
             .incorrect-reponse{
-                background: $blanc;
-                border: 2px solid $rouge;
-                border-radius: 5px;
-                padding: 4px 6px;
-                font-size: 13px;
+                @include reponse($rouge);
                 margin-bottom: 8px;
             }
+            .correct-answer{
+                @include answer($vert, $vert);
+            }
             .correct-reponse{
-                background: $blanc;
-                border: 2px solid $vert;
-                border-radius: 5px;
-                padding: 4px 6px;
-                font-size: 13px;
+                @include reponse($vert);
             }
         }
     }

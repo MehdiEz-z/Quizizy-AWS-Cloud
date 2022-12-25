@@ -39,21 +39,21 @@ let incorect_array      = [];//Array Stock incorrect Response
 
 
 // Button Quizizy clicked
-enter_btn.onclick   = ()=>{
+enter_btn.onclick       = ()=>{
     info_box.classList.add("active-info") //Show info box
     stepper.classList.add("active-stepper") //Show stepper
     bullet_one.classList.add("coloring-bullet") //Coloring first bullet
 }
 
 // Button Exit Quiz clicked
-exit_btn.onclick    = ()=>{
+exit_btn.onclick        = ()=>{
     info_box.classList.remove("active-info") //Hide info box
     stepper.classList.remove("active-stepper") //Hide stepper
     bullet_one.classList.remove("coloring-bullet") //Deoloring first bullet
 }
 
 // Button Start Quiz clicked
-start_btn.onclick   = ()=>{
+start_btn.onclick       = ()=>{
     bar_progress.style.setProperty('--bar-progress', `${progress_conter}%`) //Progress bar 10%
     bar_stepper.style.setProperty('--bar-stepper', '50%') //Progress stepper to second step
     info_box.classList.remove("active-info"); //Hide info box
@@ -201,7 +201,9 @@ function showCorrection(){
     for(let j = 0; j < incorect_array.length; j++){
         let correction_tag          = `<div class="correction">
                                             <div class="incorrect-question"><span>${incorect_array[j].question}</span></div>
+                                            <div class="your-answer">Your answer</div>
                                             <div class="incorrect-reponse"><span>${incorect_array[j].false}</span></div>
+                                            <div class="correct-answer">Correct answer</div>
                                             <div class="correct-reponse"><span>${incorect_array[j].true}</span></div>
                                         </div`
         expilcation.innerHTML       += correction_tag
