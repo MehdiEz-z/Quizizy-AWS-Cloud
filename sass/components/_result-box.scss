@@ -46,9 +46,26 @@
             background-color: $blanc-casse;
             margin-bottom: 8px;
             border-radius: 5px;
-            .incorect-question{
+            border-left: 6px solid $rouge;
+            .incorrect-question{
                 font-size: 15px;
                 font-weight: 500;
+                margin-bottom: 10px;
+            }
+            .incorrect-reponse{
+                background: $blanc;
+                border: 2px solid $rouge;
+                border-radius: 5px;
+                padding: 4px 6px;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+            .correct-reponse{
+                background: $blanc;
+                border: 2px solid $vert;
+                border-radius: 5px;
+                padding: 4px 6px;
+                font-size: 13px;
             }
         }
     }
