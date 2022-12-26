@@ -40,12 +40,14 @@
         .correction{
             padding: 10px;
             margin-right: 0;
-            width: 400px;
+            width: 480px;
             height: auto;
             background-color: $blanc-casse;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             border-radius: 5px;
             border-left: 6px solid $rouge;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 
+                        0 6px 20px 0 rgba(0, 0, 0, 0.1);
             .incorrect-question{
                 font-size: 15px;
                 font-weight: 500;
