@@ -27,6 +27,10 @@ const quit_btn          = result_box.querySelector(".buttons .quit");
 const replay_btn        = result_box.querySelector(".buttons .restart");
 const expilcation       = result_box.querySelector(".explication");
 
+// Json Data
+let questions = []
+ajax();
+
 // Counters
 let question_counter    = 0; //Question counter
 let question_number     = 1; //Question number  
@@ -128,10 +132,10 @@ function showQuestions(index){
     question_text.innerHTML         = question_tag
 
     //Get Response
-    let option_tag                  = `<div class="option"><span>${questions[index].options[0]}</span></div>
-                                    <div class="option"><span>${questions[index].options[1]}</span></div>
-                                    <div class="option"><span>${questions[index].options[2]}</span></div>
-                                    <div class="option"><span>${questions[index].options[3]}</span></div> `
+    let option_tag                  = `<div class="option"><span>${questions[index].option_1}</span></div>
+                                    <div class="option"><span>${questions[index].option_2}</span></div>
+                                    <div class="option"><span>${questions[index].option_3}</span></div>
+                                    <div class="option"><span>${questions[index].option_4}</span></div> `
     option_list.innerHTML           = option_tag
 
     //Set Attribute "onclick" to Options
@@ -210,4 +214,16 @@ function showCorrection(){
     }
 }
 
-        
+
+function ajax(){
+
+    let importData = new XMLHttpRequest();
+    importData.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            questions = JSON.parse(this.responseText);
+            console.log(questions);
+        }
+    }
+    importData.open("GET" , "./connect/script.php")
+    importData.send()
+}
